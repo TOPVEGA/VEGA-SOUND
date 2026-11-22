@@ -1,129 +1,201 @@
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--               🔷 VEGA & LOGIC | Clean & Elegant 🔷                     -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-
 <div align="center">
 
-  <!-- خلفية علوية متدرجة بدرجات الأزرق الهادئ -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:1E3A8A,100:3B82F6&height=180&section=header&text=TopVeGa&fontSize=70&fontColor=ffffff&fontAlignY=35&desc=Founder%20of%20VEGA%20%26%20Logic&descAlignY=58&descSize=18&animation=fadeIn" width="100%" />
+# VEGA SOUND
 
-  <!-- كتابة متحركة باللون الأزرق الهادئ -->
-  <a href="https://t.me/TopVeGa">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Plus+Jakarta+Sans&weight=600&size=24&duration=3000&pause=1000&color=3B82F6&center=true&vCenter=true&width=600&height=50&lines=Telegram+Bots+Developer;Python+Automation;Soft+UI+and+Hard+Code" alt="Typing SVG" />
-  </a>
+### Telegram Group Voice Chat Music Bot
 
-  <br>
+A feature-rich Telegram music bot built with Python, Pyrogram, and PyTgCalls.
 
-  <!-- شارات معلومات سريعة بتصميم أنيق -->
-  <img src="https://img.shields.io/badge/Egypt-1E3A8A?style=for-the-badge&logoColor=white&color=3B82F6" />
-  <img src="https://img.shields.io/badge/Python-1E3A8A?style=for-the-badge&logoColor=white&color=3B82F6" />
-  <img src="https://img.shields.io/badge/Since_2015-1E3A8A?style=for-the-badge&logoColor=white&color=3B82F6" />
+<p>
+  <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Platform-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  <img src="https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+</p>
 
 </div>
 
-<br><br>
+---
 
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--                        نبذة | Clean Section                            -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
+## Overview
+
+**VEGA SOUND** is a Telegram music bot project designed to play audio in group voice chats. It combines multiple music sources, playback controls, queue management, inline interfaces, and administrative tools in one project.
+
+The codebase is organized into platform integrations, playback plugins, bot utilities, and configuration modules.
+
+## Features
+
+### Music Playback
+- Play music and audio in Telegram group voice chats.
+- Search for tracks and process supported music links.
+- Support for YouTube, Spotify, SoundCloud, Apple Music, Resso, and Telegram media integrations.
+- Audio streaming and track downloading utilities.
+- Display track information and thumbnails where supported.
+- Queue-based playback for managing upcoming tracks.
+
+### Playback Controls
+- Pause and resume the current track.
+- Skip to the next track.
+- Stop playback.
+- Seek to a selected position.
+- Adjust playback speed.
+- Shuffle the queue.
+- Repeat or loop playback.
+- View and manage the current queue.
+
+### Bot Interface
+- Start and help menus.
+- Inline buttons and callback interactions.
+- Interactive playback and settings panels.
+- Configurable bot commands.
+- Track and playlist information displays.
+
+### Administration
+- Admin authorization and permission checks.
+- Group playback controls.
+- Owner and privileged-user configuration.
+- Broadcast and assistant-management utilities.
+- Automatic assistant leave settings.
+
+### Storage and Utilities
+- MongoDB integration through Motor.
+- Local JSON-based storage support.
+- Logging and runtime statistics utilities.
+- Thumbnail and media-processing helpers.
+- Cookie and download support utilities.
+
+## Supported Integrations
+
+| Platform | Integration |
+|---|---|
+| YouTube | Search, track processing, and playback |
+| Spotify | Track and playlist-related processing |
+| SoundCloud | Audio source integration |
+| Apple Music | Music link integration |
+| Resso | Music source integration |
+| Telegram | Audio and video media |
+
+*Actual availability may depend on external services, API access, cookies, and the configuration supplied by the operator.*
+
+## Project Structure
+
+```text
+VEGA-SOUND/
+├── Make/
+│   ├── VeGa/
+│   │   ├── core/          # Bot, userbot, and database core
+│   │   ├── platforms/     # Music platform integrations
+│   │   ├── plugins/
+│   │   │   ├── admins/    # Playback and admin controls
+│   │   │   ├── bot/       # Start, help, inline, and settings
+│   │   │   ├── misc/      # Utility features
+│   │   │   └── play/      # Playback and music commands
+│   │   ├── utils/         # Helpers, queues, streams, and tools
+│   │   └── assets/        # Images, fonts, and media assets
+│   ├── config.py          # Configuration settings
+│   ├── requirements.txt  # Make package dependencies
+│   └── sample.env         # Environment variable template
+├── Maker/                 # Additional bot modules
+├── bot.py                 # Bot startup module
+├── main.py                # Main launcher
+├── requirements.txt       # Python dependencies
+├── setup                  # Linux dependency installer
+└── start                  # Startup script
+```
+
+## Requirements
+
+- Python 3
+- FFmpeg
+- Telegram API ID and API Hash
+- Telegram Bot Token
+- MongoDB connection URI (for database-backed features)
+- A Telegram account session for assistant/userbot functionality, where required
+- Required API credentials and cookies for integrations that need them
+
+## Configuration
+
+1. Create a Telegram application at [my.telegram.org](https://my.telegram.org) to obtain your `API_ID` and `API_HASH`.
+2. Create a bot with [@BotFather](https://t.me/BotFather) to obtain your bot token.
+3. Prepare a MongoDB connection URI if you intend to use database-backed features.
+4. Review `Make/sample.env` and the configuration modules.
+5. Supply your own credentials through environment variables or a secure configuration method.
+
+Common configuration variables include:
+
+| Variable | Purpose |
+|---|---|
+| `API_ID` | Telegram API ID |
+| `API_HASH` | Telegram API Hash |
+| `BOT_TOKEN` | Telegram bot token |
+| `OWNER_ID` | Bot owner Telegram user ID |
+| `LOGGER_ID` | Logging chat ID |
+| `MONGO_DB_URI` | MongoDB connection URI |
+| `STRING_SESSION` | Assistant account session |
+| `COOKIE_URL` | Cookie source, when required |
+| `API_URL` / `API_KEY` | Optional external API settings |
+
+**Security:** Never publish bot tokens, API secrets, session strings, database credentials, or private cookies. If any real credentials have been committed to a repository, revoke or rotate them before deploying. Keep secrets in environment variables and remove hard-coded credentials from source files.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd VEGA-SOUND
+```
+
+Install system dependencies on Debian/Ubuntu:
+
+```bash
+sudo apt update
+sudo apt install -y python3 python3-pip ffmpeg
+```
+
+Install Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Configure the required environment variables, then review the startup modules and launch command for your deployment environment.
+
+> **Important:** This repository contains more than one startup/configuration path. Verify the intended entry point and ensure that all required settings are loaded from your environment before running it. The included files may require adjustment for your hosting platform.
+
+## Deployment Notes
+
+- Keep FFmpeg installed and available in the system `PATH`.
+- Use a stable host that supports persistent Python processes and Telegram voice-chat connections.
+- Configure MongoDB and any required external API credentials.
+- Check platform/API restrictions and keep dependencies compatible.
+- Monitor logs for download, streaming, and connection errors.
+
+## License
+
+This project includes a `LICENSE` file. Review that file for the applicable license terms before copying, modifying, or redistributing the code.
+
+## Credits
+
+Developed and customized under the **VEGA SOUND** project identity.
+
+For support, updates, and project information, use the official links provided by the project owner.
+
+---
 
 <div align="center">
-  
-  <!-- خط فاصل أزرق ناعم -->
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:3B82F6,100:1E3A8A&height=4&width=60%&section=header" />
-  
-  <br><br>
-  
-  <h3 style="color: #3B82F6;">قصتي مع الكود</h3>
-  
-  <p style="color: #D1D5DB; font-size: 16px; line-height: 2;">
-    مبرمج شاب، ومؤسس علامة <b style="color: #60A5FA;">VEGA &amp; Logic</b>.<br>
-    بدأت رحلتي منذ <b style="color: #60A5FA;">2015</b>، وأتخصص في بناء بوتات تيليجرام الذكية،<br>
-    وأتمتة المهام، وتطوير السكربتات بأسلوب يجمع بين <b style="color: #60A5FA;">البساطة والقوة</b>.<br>
-    هدفي دائماً: تبسيط التقنية للمستخدم العربي بأناقة.
-  </p>
-  
-  <br>
-  
-  <!-- خط فاصل أزرق ناعم -->
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1E3A8A,100:3B82F6&height=4&width=60%&section=header" />
+
+**VEGA SOUND**  
+*Music • Voice Chats • Telegram*
 
 </div>
 
-<br><br>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--                    المشاريع | Clean Blue Buttons                       -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-  <h3 style="color: #3B82F6;">إمبراطوريتي الرقمية</h3>
-  <p style="color: #9CA3AF;">اضغط لاستكشاف مشاريعي</p>
-
-  <a href="https://t.me/vegaone">
-    <img src="https://img.shields.io/badge/VEGA_SOUND-1E3A8A?style=for-the-badge&logoColor=white&color=3B82F6" height="40" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://t.me/Logii3">
-    <img src="https://img.shields.io/badge/LOGIC-1E3A8A?style=for-the-badge&logoColor=white&color=3B82F6" height="40" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://t.me/Bi1ieBot">
-    <img src="https://img.shields.io/badge/BilieBot-1E3A8A?style=for-the-badge&logoColor=white&color=3B82F6" height="40" />
-  </a>
-</div>
-
-<br><br>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--                     التقنيات | 3D Icons                                -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-  <h3 style="color: #3B82F6;">ترسانتي التقنية</h3>
-  <br>
-  <!-- أيقونات تقنية 3D بألوان مريحة للعين -->
-  <img src="https://skillicons.dev/icons?i=python,linux,git,github,vscode,mongodb,redis,fastapi,bash,docker,nginx&theme=dark&perline=11" alt="Tech Stack" />
-</div>
-
-<br><br>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--                     الإحصائيات | Dark Blue Theme                       -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-  <h3 style="color: #3B82F6;">الإحصائيات</h3>
-  
-  <!-- إحصائيات جيت هاب -->
-  <img src="https://github-readme-stats.vercel.app/api?username=TopVeGa&show_icons=true&theme=dark&bg_color=0F172A&title_color=3B82F6&icon_color=3B82F6&text_color=D1D5DB&border_color=1E3A8A&hide_border=false&border_radius=15" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TopVeGa&layout=compact&theme=dark&bg_color=0F172A&title_color=3B82F6&text_color=D1D5DB&border_color=1E3A8A&hide_border=false&border_radius=15" alt="Top Languages" width="45%" />
-
-  <br><br>
-
-  <!-- عداد الأيام المتتالية -->
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=TopVeGa&theme=dark&background=0F172A&border=1E3A8A&stroke=3B82F6&ring=3B82F6&fire=60A5FA&currStreakLabel=3B82F6&sideLabels=D1D5DB&currStreakNum=FFFFFF&dates=9CA3AF&border_radius=15" alt="GitHub Streak" width="70%" />
-</div>
-
-<br><br>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--                       الحقوق | Footer                                  -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
+<!-- ═══════════════════════════════════════════════════════════════════════ --><!--                       Copyright | Footer                              --><!-- ═══════════════════════════════════════════════════════════════════════ --><div align="center">
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:3B82F6,100:0F172A&height=4&width=40%&section=header" />
-  <br><br>
-
-  <p style="color: #9CA3AF; font-size: 14px;">
+  <br><br>  <p style="color: #9CA3AF; font-size: 14px;">
     <b style="color: #3B82F6;">Brand:</b> VEGA &amp; Logic &nbsp;|&nbsp;
     <b style="color: #3B82F6;">Copyright:</b> © 2015 - 2025
   </p>
   <p style="color: #6B7280; font-size: 12px;">
   </p>
-</div>
-
-<br>
-
-<!-- خلفية سفلية متدرجة ناعمة -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:3B82F6,50:1E3A8A,100:0F172A&height=120&section=footer" width="100%" />
+</div><br><!-- Smooth Gradient Footer Background --><img src="https://capsule-render.vercel.app/api?type=waving&color=0:3B82F6,50:1E3A8A,100:0F172A&height=120&section=footer" width="100%" /></div>
